@@ -46,6 +46,9 @@ interface Props {
   initialModal?: string | null;
   initialTab?: TabKey;
   onBack?: () => void;
+  /** Render as a panel overlay on top of the artwork menu (no duplicate home hub). */
+  overlay?: boolean;
+
 }
 
 const IDLE_FRAMES = 6;

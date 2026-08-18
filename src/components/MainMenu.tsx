@@ -221,6 +221,8 @@ export function MainMenu({
   initialModal = null,
   initialTab = "character",
   onBack,
+  overlay = false,
+
 }: Props) {
   const { profile, patch, reset } = useProfile();
   const [tab, setTab] = useState<TabKey>(initialTab);

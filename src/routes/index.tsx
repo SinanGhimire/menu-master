@@ -149,7 +149,8 @@ function Game() {
     autoAim: false,
   });
   const [ready, setReady] = useState(false);
-  const [screen, setScreen] = useState<"art" | "menu" | "play">("art");
+  const [screen, setScreen] = useState<"art" | "play">("art");
+  const [panelOpen, setPanelOpen] = useState(false);
   const [mode, setMode] = useState<RunMode>("survival");
   const [menuModal, setMenuModal] = useState<string | null>(null);
   const [menuTab, setMenuTab] = useState<
@@ -336,57 +337,55 @@ function Game() {
 
   if (screen === "art") {
     return (
-      <ArtMenu
-        mode={mode}
-        onMode={(m: RunMode) => {
-          playSfx("ui");
-          setMode(m);
-        }}
-        onPlay={startRun}
-        onOpen={(t: ArtTarget) => {
-          playSfx("ui");
-          if (t.kind === "tab") {
-            setMenuTab(t.tab);
-            setMenuModal(null);
-          } else if (t.kind === "modal") {
-            setMenuModal(t.modal);
-          }
-          setScreen("menu");
-        }}
-        muted={muted}
-        onToggleMute={toggleMute}
-        ready={ready}
-      />
+      <>
+        <ArtMenu
+          mode={mode}
+          onMode={(m: RunMode) => {
+            playSfx("ui");
+            setMode(m);
+          }}
+          onPlay={startRun}
+          onOpen={(t: ArtTarget) => {
+            playSfx("ui");
+            if (t.kind === "tab") {
+              setMenuTab(t.tab);
+              setMenuModal(null);
+            } else if (t.kind === "modal") {
+              setMenuModal(t.modal);
+            }
+            setPanelOpen(true);
+          }}
+          muted={muted}
+          onToggleMute={toggleMute}
+          ready={ready}
+        />
+
+        {panelOpen && (
+          <MainMenu
+            key={`${menuTab}-${menuModal ?? ""}`}
+            overlay
+            character={character}
+            onSelect={(k) => {
+              playSfx("ui");
+              setCharacter(k);
+            }}
+            best={best}
+            muted={muted}
+            onToggleMute={toggleMute}
+            ready={ready}
+            onPlay={startRun}
+            initialTab={menuTab}
+            initialModal={menuModal}
+            onBack={() => {
+              playSfx("ui");
+              setPanelOpen(false);
+              setMenuModal(null);
+            }}
+          />
+        )}
+      </>
     );
   }
-
-  if (screen === "menu") {
-    return (
-      <MainMenu
-        key={`${menuTab}-${menuModal ?? ""}`}
-        character={character}
-        onSelect={(k) => {
-          playSfx("ui");
-          setCharacter(k);
-        }}
-        best={best}
-        muted={muted}
-        onToggleMute={toggleMute}
-        ready={ready}
-        onPlay={startRun}
-        initialTab={menuTab}
-        initialModal={menuModal}
-        onBack={() => {
-          playSfx("ui");
-          setScreen("art");
-        }}
-      />
-    );
-  }
-
-
-
-
 
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-void p-2 sm:p-4">

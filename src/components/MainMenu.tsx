@@ -655,6 +655,7 @@ export function MainMenu({
           </section>
 
           {/* ------------------------------ right rail -------------------------- */}
+          {!overlay && (
           <aside className="flex shrink-0 flex-col gap-4 lg:w-72">
             <div className="panel-chunk rounded-2xl p-4">
               <p className="text-center text-sm font-black uppercase tracking-[0.2em] text-gold">
@@ -723,6 +724,7 @@ export function MainMenu({
               </button>
             </div>
           </aside>
+          )}
         </div>
 
         {/* ------------------------------ bottom tabs --------------------------- */}

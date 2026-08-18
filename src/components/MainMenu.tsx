@@ -349,7 +349,7 @@ export function MainMenu({
   ];
 
   return (
-    <main className={`relative min-h-screen w-full overflow-x-hidden px-3 py-4 sm:px-5 ${overlay ? "fixed inset-0 z-40 overflow-y-auto" : ""}`}>
+    <main className={`min-h-screen w-full overflow-x-hidden px-3 py-4 sm:px-5 ${overlay ? "fixed inset-0 z-40 overflow-y-auto" : "relative"}`}>
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 bg-cover bg-center"

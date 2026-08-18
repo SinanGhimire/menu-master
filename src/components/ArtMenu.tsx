@@ -20,28 +20,29 @@ interface Hotspot {
 
 const HOTSPOTS: Hotspot[] = [
   // left rail
-  { id: "shop", label: "Shop", x: 2.2, y: 3.6, w: 7.3, h: 16.0, radius: "18%", target: { kind: "modal", modal: "shop" } },
-  { id: "missions", label: "Missions", x: 2.2, y: 24.7, w: 7.3, h: 14.5, radius: "18%", target: { kind: "modal", modal: "missions" } },
-  { id: "achievements", label: "Achievements", x: 2.2, y: 43.6, w: 7.3, h: 15.0, radius: "18%", target: { kind: "modal", modal: "achievements" } },
+  { id: "shop", label: "Shop", x: 1.5, y: 2.3, w: 8.0, h: 18.0, radius: "18%", target: { kind: "modal", modal: "shop" } },
+  { id: "missions", label: "Missions", x: 1.5, y: 23.2, w: 8.0, h: 18.0, radius: "18%", target: { kind: "modal", modal: "missions" } },
+  { id: "achievements", label: "Achievements", x: 1.5, y: 43.0, w: 8.0, h: 17.5, radius: "18%", target: { kind: "modal", modal: "achievements" } },
 
   // right rail
-  { id: "daily", label: "Daily Rewards", x: 90.1, y: 3.3, w: 8.0, h: 18.0, radius: "18%", target: { kind: "modal", modal: "gift" } },
-  { id: "starter", label: "Starter Pack", x: 90.1, y: 24.0, w: 8.0, h: 17.6, radius: "18%", target: { kind: "modal", modal: "starter" } },
-  { id: "current", label: "Current Run", x: 90.1, y: 44.3, w: 8.0, h: 17.6, radius: "18%", target: { kind: "modal", modal: "leaderboard" } },
+  { id: "daily", label: "Daily Rewards", x: 89.3, y: 2.3, w: 9.4, h: 19.0, radius: "18%", target: { kind: "modal", modal: "gift" } },
+  { id: "starter", label: "Starter Pack", x: 89.3, y: 23.2, w: 9.4, h: 19.5, radius: "18%", target: { kind: "modal", modal: "starter" } },
+  { id: "current", label: "Current Run", x: 89.3, y: 43.5, w: 9.4, h: 19.0, radius: "18%", target: { kind: "modal", modal: "leaderboard" } },
 
   // play
-  { id: "play", label: "Play", x: 36.3, y: 79.7, w: 26.9, h: 14.7, radius: "9999px", target: { kind: "play" } },
+  { id: "play", label: "Play", x: 35.0, y: 78.5, w: 30.0, h: 14.5, radius: "9999px", target: { kind: "play" } },
 
   // bottom left tabs
-  { id: "character", label: "Character", x: 1.8, y: 85.3, w: 8.7, h: 12.4, radius: "14%", target: { kind: "tab", tab: "character" } },
-  { id: "weapons", label: "Weapons", x: 11.3, y: 85.3, w: 8.4, h: 12.4, radius: "14%", target: { kind: "tab", tab: "weapons" } },
-  { id: "upgrades", label: "Upgrades", x: 20.7, y: 85.3, w: 8.4, h: 12.4, radius: "14%", target: { kind: "tab", tab: "upgrades" } },
+  { id: "character", label: "Character", x: 1.5, y: 84.0, w: 9.2, h: 15.6, radius: "14%", target: { kind: "tab", tab: "character" } },
+  { id: "weapons", label: "Weapons", x: 11.0, y: 84.0, w: 9.2, h: 15.6, radius: "14%", target: { kind: "tab", tab: "weapons" } },
+  { id: "upgrades", label: "Upgrades", x: 20.3, y: 84.0, w: 9.2, h: 15.6, radius: "14%", target: { kind: "tab", tab: "upgrades" } },
 
   // bottom right tabs
-  { id: "upgrades-2", label: "Upgrades", x: 71.6, y: 85.3, w: 8.0, h: 12.4, radius: "14%", target: { kind: "tab", tab: "upgrades" } },
-  { id: "echoes", label: "Echoes", x: 81.0, y: 85.3, w: 7.6, h: 12.4, radius: "14%", target: { kind: "tab", tab: "echoes" } },
-  { id: "collection", label: "Collection", x: 89.4, y: 85.3, w: 8.4, h: 12.4, radius: "14%", target: { kind: "tab", tab: "collection" } },
+  { id: "upgrades-2", label: "Upgrades", x: 71.0, y: 84.0, w: 9.0, h: 15.6, radius: "14%", target: { kind: "tab", tab: "upgrades" } },
+  { id: "echoes", label: "Echoes", x: 80.6, y: 84.0, w: 8.4, h: 15.6, radius: "14%", target: { kind: "tab", tab: "echoes" } },
+  { id: "collection", label: "Collection", x: 88.9, y: 84.0, w: 9.6, h: 15.6, radius: "14%", target: { kind: "tab", tab: "collection" } },
 ];
+
 
 
 export function ArtMenu({

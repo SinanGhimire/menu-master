@@ -349,7 +349,7 @@ export function MainMenu({
   ];
 
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden px-3 py-4 sm:px-5">
+    <main className={`relative min-h-screen w-full overflow-x-hidden px-3 py-4 sm:px-5 ${overlay ? "fixed inset-0 z-40 overflow-y-auto" : ""}`}>
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 bg-cover bg-center"
@@ -358,7 +358,7 @@ export function MainMenu({
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 backdrop-blur-xl"
-        style={{ background: "rgba(6,4,14,0.88)" }}
+        style={{ background: overlay ? "rgba(6,4,14,0.92)" : "rgba(6,4,14,0.88)" }}
       />
 
       <div className="relative mx-auto flex min-h-[calc(100vh-2rem)] w-full max-w-[1400px] flex-col justify-center gap-4">
@@ -372,6 +372,7 @@ export function MainMenu({
             ← Back to menu
           </button>
         )}
+
 
         {/* ------------------------------- top bar ------------------------------ */}
         <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 lg:grid-cols-[18rem_minmax(0,1fr)_auto]">

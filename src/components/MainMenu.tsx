@@ -432,8 +432,9 @@ export function MainMenu({
           </div>
         </header>
 
-        <div className="grid gap-4 lg:grid-cols-[14rem_minmax(0,1fr)_18rem] lg:items-start">
+        <div className={`grid gap-4 lg:items-start ${overlay ? "" : "lg:grid-cols-[14rem_minmax(0,1fr)_18rem]"}`}>
           {/* ------------------------------ left rail --------------------------- */}
+          {!overlay && (
           <nav className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-1">
             {navItems.map(({ key, label, icon: Icon }) => (
               <button
@@ -451,9 +452,11 @@ export function MainMenu({
               </button>
             ))}
           </nav>
+          )}
 
           {/* -------------------------------- center ---------------------------- */}
           <section className="flex flex-col items-center gap-5">
+            {!overlay && (
             <div className="animate-float-up text-center">
               <h1 className="text-outline text-5xl font-black leading-none tracking-tighter text-white sm:text-6xl">
                 ECHO
@@ -462,6 +465,8 @@ export function MainMenu({
                 Survive. Upgrade. Echo.
               </p>
             </div>
+            )}
+
 
             <div className="panel-chunk flex min-h-[15rem] w-full items-center justify-center rounded-3xl p-4">
             {tab === "character" && (

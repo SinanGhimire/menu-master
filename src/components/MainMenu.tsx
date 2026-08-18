@@ -615,9 +615,42 @@ export function MainMenu({
 
             {!overlay && (
             <div className="w-full max-w-md">
-...
+              <button
+                type="button"
+                disabled={!ready}
+                onClick={play}
+                className="btn-chunk-gold press flex w-full items-center justify-center gap-4 rounded-2xl px-6 py-4 disabled:opacity-60"
+              >
+                <Swords className="h-7 w-7 text-gold-foreground" />
+                <span className="text-left">
+                  <span className="block text-2xl font-black uppercase leading-none tracking-wide text-gold-foreground">
+                    {ready ? "Play" : "Loading…"}
+                  </span>
+                  <span className="block text-[11px] font-bold uppercase tracking-[0.25em] text-gold-foreground/80">
+                    {MODES.find((m) => m.key === mode)!.label} · {ENERGY_COST} energy
+                  </span>
+                </span>
+              </button>
+
+              <div className="mt-3 grid grid-cols-3 items-stretch gap-2">
+                {MODES.map(({ key, label, sub, icon: Icon }) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setMode(key)}
+                    className={`btn-chunk press flex h-full flex-col items-center justify-start gap-1.5 rounded-2xl px-2 py-3 text-center ${mode === key ? "ring-2 ring-gold" : ""}`}
+                  >
+                    <Icon className={`h-5 w-5 shrink-0 ${mode === key ? "text-gold" : "text-violet"}`} />
+                    <p className="text-[11px] font-black uppercase leading-none tracking-wide text-foreground">
+                      {label}
+                    </p>
+                    <p className="text-[10px] leading-tight text-foreground/65">{sub}</p>
+                  </button>
+                ))}
+              </div>
             </div>
             )}
+
 
           </section>
 

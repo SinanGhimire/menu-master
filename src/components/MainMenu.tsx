@@ -30,7 +30,7 @@ import { CHARACTERS, WEAPONS } from "@/game/engine";
 import { UPGRADES, RARITY_COLOR } from "@/game/upgrades";
 import { isNewDay, levelFor, useProfile, xpInLevel, XP_PER_LEVEL } from "@/game/profile";
 import type { CharacterKey } from "@/game/types";
-import menuArt from "@/assets/echo-menu-art-v2.png.asset.json";
+import menuArt from "@/assets/echo-menu-art-v2.png";
 
 
 export type RunMode = "endless" | "boss" | "survival";
@@ -353,7 +353,7 @@ export function MainMenu({
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${menuArt.url})` }}
+        style={{ backgroundImage: `url(${menuArt})` }}
       />
       <div
         aria-hidden

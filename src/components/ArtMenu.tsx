@@ -1,4 +1,4 @@
-import menuArt from "@/assets/echo-menu-art-v2.png.asset.json";
+import menuArt from "@/assets/echo-menu-art-v2.png";
 import type { RunMode } from "@/components/MainMenu";
 
 export type ArtTarget =
@@ -71,7 +71,7 @@ export function ArtMenu({
         style={{ aspectRatio: "1376 / 768" }}
       >
         <img
-          src={menuArt.url}
+          src={menuArt}
           alt="Echo main menu artwork"
           className="pointer-events-none absolute inset-0 h-full w-full object-contain"
           draggable={false}
